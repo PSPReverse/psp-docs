@@ -1,0 +1,110 @@
+MMIO address
+
+-- CCP device v5?
+0x03000004 CMD5_QUEUE_PRIO_OFFSET
+    * writes:
+        start_ccp_cmd: *0x03000004 = *0x03000004 & ~(7 << uQueueNr * 3) | dwParmUnk3 << uQueueNr * 3;
+        FUN_00007dc4:  *0x03000004 = *(undefined4 *)(iParm2 + 0xfc0);
+    * reads:
+        FUN_0000848c:  *(undefined4 *)(iParm2 + 0xfc0) = *0x03000004;
+0x03000008 CMD5_REQID_CONFIG_OFFSET
+    * writes:
+        FUN_00007dc4:  *0x03000008 = *(undefined4 *)(iParm2 + 0xfd0);
+    * reads:
+        FUN_0000848c:  *(undefined4 *)(iParm2 + 0xfc8) = *DAT_000085a0;
+0x0300000c TRNG_OUT_REG
+    * reads:
+        init_some_device_maybe: local_18 = *0x0300000c;
+0x03000010 CMD5_CMD_TIMEOUT_OFFSET
+    * reads:
+        FUN_00007dc4
+        FUN_0000848c
+0x03000014
+    * reads:
+        FUN_0000848c
+0x03000018 LSB_PUBLIC_MASK_LO_OFFSET
+    * writes:
+        FUN_00007dc4
+    * reads:
+        FUN_0000848c
+0x0300001c LSB_PUBLIC_MASK_HI_OFFSET
+    * reads:
+        FUN_0000848c
+0x03000020 LSB_PRIVATE_MASK_LO_OFFSET
+    * reads:
+        FUN_0000848c
+0x03000024 LSB_PRIVATE_MASK_HI_OFFSET
+    * reads:
+        FUN_0000848c
+
+-- CCP dev first queue registers
+0x03001000 CMD5_Q_CONTROL_BASE
+0x03001004 CMD5_Q_TAIL_LO_BASE
+0x03001008 CMD5_Q_HEAD_LO_BASE
+0x03001100 CMD5_Q_STATUS_BASE
+
+-- Dev3?
+0x03006000
+0x03006008
+0x03006020
+0x03006024
+0x0300603c
+0x03006040
+0x0300604c
+0x03006054
+
+-- Dev4?
+0x03010004
+
+0x0301003c
+0x03010040
+
+-- Dev5?
+0x03010104
+    * reads:
+        only_referenced_from_main:                   iVar4 = *0x03010104;
+        FUN_00004690:                                bVar6 = (DAT_00004718 & ~*0x03010104) == 0;
+        is_any_of_two_bits_in_mmio_reg_clear:        if ((0x00080002 & ~*0x03010104) != 0)
+        is_any_of_two_bits_in_mmio_reg_clear_v2:     if ((0x00080002 & ~*0x03010104) != 0)
+        init_some_dev_in_mmio:                       if ((*DAT_000059d0 >> 0x1f & ~(uint)((0x00080002 & ~*0x03010104) == 0)) == 0) {
+        FUN_0000710c:                                if ((0x00080002 & ~*0x03010104) == 0) {
+        FUN_0000a8c0:                                if ((((0x00080002 & ~*0x03010104) == 0) || (*(int *)(iParm1 + 0x30) != 0)) &&
+        FUN_000093b0:                                if (((0x00080002 & ~*0x03010104) == 0) && (*DAT_000093dc << 0x1d < 0)) {
+        FUN_0000b338:                                 (bVar4 = (0x00080002 & ~*0x03010104) == 0, dwParamUnk1 = (uint32_t)bVar4, bVar4)) {
+
+0x03010300
+0x030103b0
+0x030103c0 <- INTR pending? bit 0 => 1 not pending
+0x030103c4 <- INTR source pending next?
+
+0x03010400
+
+-- Some timer/count device (taken from psp_sleep_maybe())
+0x03010424 <- Control register
+0x03010428
+0x0301042c
+0x03010430
+0x03010434
+0x03010438
+0x0301043c
+0x03010440
+0x03010444 <- Counted ticks register maybe
+
+-- Dev6?
+0x03010544
+0x03010560
+0x03010570 <- Mailbox registers start?
+0x03010580
+0x03010594
+0x03010598
+0x030105a0
+0x030105a4
+0x030105c4
+0x030105f0
+0x030105fc
+
+0x03010618
+0x0301061c
+
+0x0301071c
+

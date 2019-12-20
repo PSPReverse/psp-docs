@@ -1,0 +1,751 @@
+=== SVC syscall table provided by PSP ===
+
+0x00:
+    Description: Exits the userspace and cleans it up, does not return to userspace.
+    Arguments: N/A
+    Returns: N/A
+    Used by:
+        * SEV
+        * DebugUnlock
+        * DramTraining
+
+0x01:
+    Description: Initializes userspace memory and maps stack
+    Arguments:
+        r0:
+        r1:
+        r2:
+    Returns:
+        r0: 
+    Used by:
+        * SEV
+        * DebugUnlock
+        * DramTraining
+
+0x02:
+    Description: Allows the app to load another directory entry from the flash
+    Arguments:
+        r0: Directory entry type/App ID
+        r1: Userspace pointer to load the entry to.
+        r2: Size of the userspace buffer.
+    Returns:
+        r0: PSP status code.
+    Used by:
+
+0x03:
+    Description: Maps an SMN (System management network) address into the PSP address space, extended version.
+    Arguments:
+        r0: The SMN address to map.
+        r1: @todo
+    Returns:
+        r0: PSP virtual address to access the SMN address.
+    Used by:
+        * SEV
+
+0x04:
+    Description: Maps an SMN (System management network) address into the PSP address space.
+    Arguments:
+        r0: The SMN address to map.
+    Returns:
+        r0: PSP virtual address to access the SMN address.
+    Used by:
+        * DebugUnlock
+        * DramTraining
+
+0x05:
+    Description: Unmaps a previously mapped SMN (System management network) address.
+    Arguments:
+        r0: PSP virtual address of the mapped SMN region to unmap.
+    Returns:
+        r0: PSP status code.
+    Used by:
+        * SEV
+        * DebugUnlock
+        * DramTraining
+
+0x06:
+    Description: A logging syscall taking a zero terminated ASCII string, not provided by the stock firmware
+    Arguments:
+        r0: Address of the string in userspace.
+    Returns:
+        r0: 
+    Used by:
+        * DebugUnlock
+        * DramTraining
+
+0x07:
+    Description: Seems to map an x86 host physical memory address into the PSP memory space and makes it accessible to userspace.
+    Arguments:
+        r0: Low 32bit of the x86 physical address
+        r1: High 32bit of the x86 physical address
+    Returns:
+        r0: PSP virtual address accessible by userspace
+    Used by:
+
+0x08:
+    Description: Unmap a x86 host physical memory address by the given PSP virtual address
+    Arguments:
+        r0: PSP virtual address returned by syscal 0x07
+    Returns:
+        r0: Status code
+    Used by:
+        * SEV
+
+0x09:
+    Description: Seems to copy data from the given x86 host physical memory address to PSP local memory.
+    Arguments:
+        r0: Low 32bit of the x86 physical address to copy from
+        r1: High 32bit of the x86 physical address to copy from
+        r2: PSP virtual address to copy to
+        r3: Number of bytes to copy
+    Returns:
+        r0: Status code.
+    Used by:
+        * AR3B (PCI device access?)
+
+0x0a:
+    Description: Writes a status code or copies a value to a given x86 host physical memory address.
+    Arguments:
+        r0: Low 32bit of the x86 physical address to copy to
+        r1: High 32bit of the x86 physical address to copy to
+        r2: Data item to copy (1, 2 or 4 bytes)
+        r3: Number of bytes to write
+    Returns:
+        r0: Status code.
+    Used by:
+        * DramTraining
+        * 0BAR / ABL0
+        * AR3B (PCI device access?)
+
+0x0b:
+    Description: Seems to provide an interface for invalidating/cleaning memory.
+    Arguments:
+        r0:
+        r1:
+        r2:
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x0c:
+    Description: Provides an interface to the CCP for offloading cryptographic work.
+    Arguments:
+        r0: Userspace pointer to a request buffer maybe (@todo Figure out format of request buffer)
+    Returns:
+        r0: Status code.
+    Used by:
+        * DebugUnlock
+
+0x0d:
+    Description:
+    Arguments:
+        r0:
+    Returns:
+        r0: Status code.
+    Used by:
+        * SEV
+        * DebugUnlock
+
+0x0e:
+    Description:
+    Arguments:
+        r0:
+    Returns:
+        r0: Status code.
+    Used by:
+        * DebugUnlock
+
+0x0f:
+    Description:
+    Arguments:
+        r0:
+    Returns:
+        r0: Status code.
+    Used by:
+        * DebugUnlock
+
+0x10:
+    Description:
+    Arguments:
+        r0:
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x11:
+    Description: Related to inter die communication
+    Arguments:
+        r0: Always 0
+        r1: Some function to execute on other dies maybe
+        r2:
+        r3:
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x12:
+    Description: Related to inter die communication
+    Arguments:
+        r0: Always 0
+        r1: Some function to execute on other dies maybe
+        r2:
+        r3:
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x13:
+    Description: Related to inter die communication
+    Arguments:
+        r0: Always 0
+        r1: Some function to execute on other dies maybe
+        r2:
+        r3:
+    Returns:
+        r0: Status code.
+    Used by:
+        * DramTraining
+
+0x14:
+    Description: Related to inter die communication
+    Arguments:
+        r0: Always 0
+        r1: Some function to execute on other dies maybe
+        r2:
+        r3:
+    Returns:
+        r0: Status code.
+    Used by:
+        * DramTraining
+
+0x15:
+    Description:
+    Arguments:
+        r0:
+        r1:
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x16:
+    Description:
+    Arguments:
+        r0:
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x17:
+    Description: Related to inter die communication
+    Arguments:
+        r0: Always 0
+        r1: Some function to execute on other dies maybe
+        r2:
+        r3:
+    Returns:
+        r0: Status code.
+    Used by:
+        * DramTraining
+
+0x18:
+    Description: Related to inter die communication
+    Arguments:
+        r0: Always 0
+        r1: Some function to execute on other dies maybe
+        r2:
+        r3:
+    Returns:
+        r0: Status code.
+    Used by:
+        * DramTraining
+
+0x19:
+    Description:
+    Arguments:
+        r0:
+    Returns:
+        r0: Status code.
+    Used by:
+        * DramTraining
+
+0x1a:
+    Description: Not provided by the PSP firmware
+    Arguments:
+    Returns:
+    Used by:
+        * DebugUnlock
+
+0x1b:
+    Description: Busy wait until the given amount of ticks has passed.
+    Arguments:
+        r0: The amount of ticks to wait (in 10 nano second increments).
+    Returns:
+        r0: Status code.
+    Used by:
+        * DramTraining
+    Remarks:
+        1 tick seems to correspond to a timespan of 10ns which indicates that the clock
+        the counter is running on is operated with 100MHz (or a it is scaled down at some point).
+
+0x1c:
+    Description: Determines the boot mode of the system (cold boot vs warm resume)
+    Arguments:
+        r0: Pointer to a a 32bit memory location holding the boot mode enum on return.
+    Returns:
+        r0: Status code.
+    Used by:
+        * 0BAR / ABL0
+
+0x1d:
+    Description:
+    Arguments:
+        r0:
+        r1:
+        r2:
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x1e:
+    Description:
+    Arguments:
+        r0:
+        r1:
+        r2:
+        r3:
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x1f:
+    Description:
+    Arguments:
+        r0:
+        r1:
+        r2:
+    Returns:
+        r0: Status code.
+    Used by:
+        * DebugUnlock
+
+0x20:
+    Description: Copies a user supplied buffer to PSP supervisor memory at address 0x0000d810.
+    Arguments:
+        r0: Some pointer to a 32byte buffer.
+    Returns:
+        r0: Status code.
+    Used by:
+        * DebugUnlock
+
+0x21:
+    Description:
+    Arguments:
+        r0:
+        r1:
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x22:
+    Description:
+    Arguments:
+        r0[8]:
+        r1[8]:
+        r2:
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x23:
+    Description:
+    Arguments:
+        r0:
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x24:
+    Description:
+    Arguments:
+        r0:
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x25:
+    Description: Maps a x86 host physical memory address into the PSP address space.
+    Arguments:
+        r0: Low 32bit of the x86 physical address to copy from
+        r1: High 32bit of the x86 physical address to copy from
+        r2: Maybe some channel number to identify the controller to use
+    Returns:
+        r0: PSP virtual address on success, NULL on error.
+    Used by:
+        * SEV
+
+0x26:
+    Description: Copies data from x86 host memory to PSP local memory.
+    Arguments:
+        r0: Userspace pointer to the request structure (see, PSPSVC0x26REQ in Ghidra)
+    Returns:
+        r0: Status code.
+    Used by:
+        * DramTraining
+
+0x27:
+    Description: Writes a status code or data value from PSP local memory to x86 host memory.
+    Arguments:
+        r0: Userspace pointer to the request structure (see remarks)
+    Returns:
+        r0: Status code.
+    Used by:
+        * DramTraining
+        * AR3B
+    Remarks:
+        Request structure:
+        {
+            X86PADDR PhysX86AddrDst; /**< Physical x86 address of the destination to write */
+            PSPADDR  PspAddrSrc;     /**< PSP memory address where the value is store */
+            uint32_t cbWrite;        /**< How much to write */
+            uint32_t enmMemTarget    /**< Memory target type (4 = normal DRAM, 6 = special memory region where some peripherals seem to be mapped) */
+        }
+
+        Observed address value pairs written:
+            0xfffdfc000cf9: 0xe (1 byte) /**< System reset issued by AR3B on memory overclock error. */
+
+0x28:
+    Description: Send message to SMU and get result
+    Arguments:
+        r0:
+        r1:
+        r2:
+    Returns:
+        r0: Status code.
+    Used by:
+        * SEV
+
+0x29:
+    Description:
+    Arguments:
+        r0[8]:
+        r1[8]:
+        r2[8]:
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x2a:
+    Description: Seems to set the location and size of the secure DRAM region for the SMU firmware
+    Arguments:
+        r0: Low 32bit of the x86 physical address to copy from
+        r1: High 32bit of the x86 physical address to copy from
+        r2: Some other address, 0xfb800000
+        r3: Size of the region in bytes maybe, 0xfffd (almost 64KB)
+    Returns:
+        r0: Status code.
+    Used by:
+        * AR3B
+
+0x2b:
+    Description:
+    Arguments:
+        r0:
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x2c:
+    Description: Writes a 0 to the global PSP firmware state
+    Arguments: N/A
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x2d:
+    Description: Seems to do something flash memory related
+    Arguments:
+        r0:
+        r1:
+        r2:
+        r3:
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x2e:
+    Description:
+    Arguments:
+        r0:
+        r1:
+        r2:
+        r3:
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x2f:
+    Description:
+    Arguments:
+        r0:
+        r1:
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x30:
+    Description:
+    Arguments:
+        r0:
+        r1:
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x31:
+    Description: Calls a PSP on a different CCX (can be called only on master)
+    Arguments:
+        r0: CCX ID of the PSP to call, 0 to do the request on all available PSPs
+        r1: Pointer to the request structure, first 32bit contain the request to execute
+        r2: Size of the request structure in bytes
+    Returns:
+        r0: Status code.
+    Used by:
+        * SEV
+
+0x32:
+    Description:
+    Arguments:
+        r0:
+        r1:
+    Returns:
+        r0: Status code.
+    Used by:
+        * SEV
+
+0x33:
+    Description:
+    Arguments:
+        r0:
+        r1:
+    Returns:
+        r0: Status code.
+    Used by:
+        * SEV
+
+0x34:
+    Description: Executes a platform reset.
+    Arguments:
+        r0:
+    Returns:
+        r0: Status code.
+    Used by:
+        * SEV
+
+0x35:
+    Description: Accesses the CCP
+    Arguments:
+        r0: Some request structure encapsulating the arguments @todo Examine the structure
+    Returns:
+        r0: Status code.
+    Used by:
+        * SEV
+
+0x36:
+    Description: Accesses the CCP
+    Arguments:
+        r0: Some request structure encapsulating the arguments @todo Examine the structure
+    Returns:
+        r0: Status code.
+    Used by:
+        * SEV
+
+0x37:
+    Description: Invalidate/clean memory ranges.
+    Arguments:
+        r0: Operation to perform (see INV_MEM_OP in Ghidra)
+        r1: Flag whether to operate on data or instruction memory.
+        r2: PSP virtual address of the start of the memory region to operate on
+        r3: Size of the memory region to operate on.
+    Returns:
+        r0: Status code.
+    Used by:
+        * SEV
+
+0x38:
+    Description:
+    Arguments:
+        r0: Userspace virtual address to the command buffer (see PSPSVC0X38REQ in Ghidra)
+    Returns:
+        r0: Status code.
+    Used by:
+        * SEV
+
+0x39:
+    Description: Fills a given buffer with random numbers using the CCP TRNG.
+    Arguments:
+        r0: Userspace virtual address to the start of the buffer to fill.
+        r1: Number of bytes to fill.
+    Returns:
+        r0: Status code.
+    Used by:
+        * SEV
+
+0x3a:
+    Description: Sets the minimum ASID required for non SEV-ES guests.
+    Arguments:
+        r0: The ASID to set.
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x3b:
+    Description: Returns the minium ASID required for non SEV-ES guests.
+    Arguments: N/A
+    Returns:
+        r0: The minimum ASID.
+    Used by:
+        * SEV
+
+0x3c:
+    Description: Returns a Userspace virtual address from the global PSP firmware state.
+    Arguments:
+        r0: Size of the region to map.
+    Returns:
+        r0: Status code.
+    Used by:
+        * SEV
+
+0x3d:
+    Description: Reads from some global memory.
+    Arguments: N/A
+    Returns:
+        r0: Data read.
+    Used by:
+
+0x3e:
+    Description: Copies a fixed 32 byte region from the PSP supervisor memory to a userspace provided memory buffer
+    Arguments:
+        r0: Userspace virtual address of the buffer
+        r1: Size of the buffer
+    Returns:
+        r0: Status code.
+    Used by:
+        * SEV
+
+0x3f:
+    Description: Not provided by the PSP firmware
+    Arguments:
+    Returns:
+    Used by:
+        * SEV
+
+0x40:
+    Description:
+    Arguments:
+        r0:
+    Returns:
+        r0: Status code.
+    Used by:
+        * DebugUnlock
+
+0x41:
+    Description:
+    Arguments:
+        r0:
+    Returns:
+        r0: Status code.
+    Used by:
+        * SEV
+
+0x42:
+    Description: Performs a CCP operation
+    Arguments:
+        r0:
+        r1: Userspace virtual address to return the number of bytes processed maybe.
+    Returns:
+        r0: Status code.
+    Used by:
+        * SEV
+
+0x43:
+    Description:
+    Arguments:
+        r0:
+    Returns:
+        r0: Status code.
+    Used by:
+        * AR3B
+
+0x44:
+    Description:
+    Arguments:
+        r0:
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x47:
+    Description:
+    Arguments:
+        r0:
+        r1:
+        r2:
+        r3:
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x48:
+    Description: Queries the start and size of the configured SMM region on the host.
+    Arguments:
+        r0: Pointer where to store the 64bit physical address of the start of the region
+        r1: Pointer where to store the 64bit region size in bytes.
+    Returns:
+        r0: Status code.
+    Used by:
+        * SEV
+    Remarks:
+        Used by the SEV app to prevent a compromised operating system from reading/writing from/to the
+        SMM region.
+
+0x49:
+    Description: Copies a 64bit word given the argument registers to PSP global memory.
+    Arguments:
+        r0: Low 32bit of the 64bit data.
+        r1: High 32bit of the 64bit data.
+    Returns:
+        r0: Status code.
+    Used by:
+    Remarks:
+        The global memory referenced is read in a function called during cold boot and warm resume.
+
+0x4a:
+    Description:
+    Arguments:
+        r0:
+    Returns:
+        r0: Status code.
+    Used by:
+        * DramTraining
+
+0x4b:
+    Description: Some NOP.
+    Arguments: N/A
+    Returns: N/A
+    Used by:
+
+0x4c:
+    Description:
+    Arguments:
+        r0:
+        r1:
+    Returns:
+        r0: Status code.
+    Used by:
+
+0x4d:
+    Description: Downloads a new firmware from the provided x86 host memory, not provided by the PSP firmware
+    Arguments:
+    Returns:
+    Used by:
+        * SEV
