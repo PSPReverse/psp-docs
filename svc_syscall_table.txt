@@ -611,7 +611,7 @@
     Arguments:
         r0: Size of the region to map.
     Returns:
-        r0: Status code.
+        r0: Userspace virtual address.
     Used by:
         * SEV
 
@@ -696,9 +696,9 @@
     Used by:
 
 0x48:
-    Description: Queries the start and size of the configured SMM region on the host.
+    Description: Queries the start and size of the configured SMM region (TSeg) on the host.
     Arguments:
-        r0: Pointer where to store the 64bit physical address of the start of the region
+        r0: Pointer where to store the 64bit physical address of the start of the region.
         r1: Pointer where to store the 64bit region size in bytes.
     Returns:
         r0: Status code.
@@ -707,6 +707,7 @@
     Remarks:
         Used by the SEV app to prevent a compromised operating system from reading/writing from/to the
         SMM region.
+        See https://www.amd.com/system/files/TechDocs/24593.pdf#G16.974288 for documentation on Tseg.
 
 0x49:
     Description: Copies a 64bit word given the argument registers to PSP global memory.
