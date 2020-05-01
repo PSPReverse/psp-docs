@@ -523,10 +523,10 @@
         * SEV
 
 0x33:
-    Description:
+    Description: Copies some encrypted and hmac'd structure to a user space address.
     Arguments:
-        r0:
-        r1:
+        r0: The user space buffer where to store the structure.
+        r1: The length of the structure (including the hmac).
     Returns:
         r0: Status code.
     Used by:
@@ -549,6 +549,8 @@
         r0: Status code.
     Used by:
         * SEV
+    Remarks:
+        This syscall seems to copy cryptographic keys into user space memory.
 
 0x36:
     Description: Accesses the CCP
@@ -558,6 +560,8 @@
         r0: Status code.
     Used by:
         * SEV
+    Remarks:
+        This syscall seems to perform cryptographic operations, such as hashing and stream-ciphering.
 
 0x37:
     Description: Invalidate/clean memory ranges.
