@@ -531,6 +531,8 @@
         r0: Status code.
     Used by:
         * SEV
+    Remarks:
+        The length of the structure seems to be 0x24b2.
 
 0x34:
     Description: Executes a platform reset.
