@@ -542,15 +542,34 @@
         * SEV
 
 0x35:
-    Description: Accesses the CCP
+    Description: Copies crypto material into user space
     Arguments:
-        r0: Some request structure encapsulating the arguments @todo Examine the structure
+        r0: Pointer to request structure in user space.
+    Request Structure:
+        struct SEV_SVC_0x33_PARAMS {
+            // The output buffer has a size of 16 bytes
+            // (The encryption key is 32 bytes long but has a 16 byte prefix of zeros)
+            uint8_t * output;
+            uint32_t output_length;
+            
+            uint8_t * unknown;          // Is always NULL
+            uint32_t unknown_length;    // Is always 0
+            
+            // The parameter name is either
+            // "sev-persistent-encryption" for the encryption key
+            // or
+            // "sev-persistent-integrity" for the hmac key
+            char * param_name;
+            uint32_t param_name_length;
+            
+            uint32_t unknown_a[2];      // First element uninitialized, second element is set to 0
+            uint32_t unknwon_w;         // Is always 4
+        };
+
     Returns:
         r0: Status code.
     Used by:
         * SEV
-    Remarks:
-        This syscall seems to copy cryptographic keys into user space memory.
 
 0x36:
     Description: Accesses the CCP
