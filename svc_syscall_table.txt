@@ -581,8 +581,6 @@
         r0: Status code.
     Used by:
         * SEV
-    Remarks:
-        This syscall seems to perform cryptographic operations, such as hashing and stream-ciphering.
 
 0x37:
     Description: Invalidate/clean memory ranges.
@@ -604,6 +602,8 @@
         r0: Status code.
     Used by:
         * SEV
+    Remarks:
+        This syscall seems to perform cryptographic operations, such as hashing and stream-ciphering.
 
 0x39:
     Description: Fills a given buffer with random numbers using the CCP TRNG.
