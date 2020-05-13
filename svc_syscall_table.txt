@@ -595,15 +595,31 @@
         * SEV
 
 0x38:
-    Description:
+    Description: Performs hashing operations.
     Arguments:
         r0: Userspace virtual address to the command buffer (see PSPSVC0X38REQ in Ghidra)
+    Request Structure:
+        struct PSPSVC0X38REQ {
+            uint8_t * data_input;
+            uint32_t data_input_length;
+            
+            uint32_t unknown_two;       // Is always 2
+            
+            uint8_t * hash_output;
+            uint32_t hash_size;         // Is always 0x20
+            uint8_t * initial_hash;
+            
+            uint32_t unknown;
+            
+            uint32_t unknown_one;       // Is always 1
+            
+            bool unknown_bool;          // Is mostly false
+        };
+
     Returns:
         r0: Status code.
     Used by:
         * SEV
-    Remarks:
-        This syscall seems to perform cryptographic operations, such as hashing and stream-ciphering.
 
 0x39:
     Description: Fills a given buffer with random numbers using the CCP TRNG.
