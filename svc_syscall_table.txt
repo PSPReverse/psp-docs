@@ -613,7 +613,7 @@
             
             uint32_t unknown_one;       // Is always 1
             
-            bool unknown_bool;          // Is mostly false
+            bool last_hash_round;
         };
 
     Returns:
