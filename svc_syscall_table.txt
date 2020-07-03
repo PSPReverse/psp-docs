@@ -36,7 +36,7 @@
     Description: Maps an SMN (System management network) address into the PSP address space, extended version.
     Arguments:
         r0: The SMN address to map.
-        r1: @todo
+        r1: Some CCD id (not used by fw)
     Returns:
         r0: PSP virtual address to access the SMN address.
     Used by:
