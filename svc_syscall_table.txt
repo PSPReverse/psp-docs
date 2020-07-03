@@ -523,14 +523,16 @@
         * SEV
 
 0x33:
-    Description:
+    Description: Copies some encrypted and hmac'd structure to a user space address.
     Arguments:
-        r0:
-        r1:
+        r0: The user space buffer where to store the structure.
+        r1: The length of the structure (including the hmac).
     Returns:
         r0: Status code.
     Used by:
         * SEV
+    Remarks:
+        The length of the structure seems to be 0x24b2.
 
 0x34:
     Description: Executes a platform reset.
@@ -542,9 +544,30 @@
         * SEV
 
 0x35:
-    Description: Accesses the CCP
+    Description: Copies crypto material into user space
     Arguments:
-        r0: Some request structure encapsulating the arguments @todo Examine the structure
+        r0: Pointer to request structure in user space.
+    Request Structure:
+        struct SEV_SVC_0x33_PARAMS {
+            // The output buffer has a size of 16 bytes
+            // (The encryption key is 32 bytes long but has a 16 byte prefix of zeros)
+            uint8_t * output;
+            uint32_t output_length;
+            
+            uint8_t * unknown;          // Is always NULL
+            uint32_t unknown_length;    // Is always 0
+            
+            // The parameter name is either
+            // "sev-persistent-encryption" for the encryption key
+            // or
+            // "sev-persistent-integrity" for the hmac key
+            char * param_name;
+            uint32_t param_name_length;
+            
+            uint32_t unknown_a[2];      // First element uninitialized, second element is set to 0
+            uint32_t unknwon_w;         // Is always 4
+        };
+
     Returns:
         r0: Status code.
     Used by:
@@ -572,9 +595,27 @@
         * SEV
 
 0x38:
-    Description:
+    Description: Performs hashing operations.
     Arguments:
         r0: Userspace virtual address to the command buffer (see PSPSVC0X38REQ in Ghidra)
+    Request Structure:
+        struct PSPSVC0X38REQ {
+            uint8_t * data_input;
+            uint32_t data_input_length;
+            
+            uint32_t unknown_two;       // Is always 2
+            
+            uint8_t * hash_output;
+            uint32_t hash_size;         // Is always 0x20
+            uint8_t * initial_hash;
+            
+            uint32_t unknown;
+            
+            uint32_t unknown_one;       // Is always 1
+            
+            bool last_hash_round;
+        };
+
     Returns:
         r0: Status code.
     Used by:
