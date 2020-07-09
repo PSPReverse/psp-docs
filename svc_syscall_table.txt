@@ -513,26 +513,28 @@
         * SEV
 
 0x32:
-    Description:
+    Description: Updates the non-volatile data from user space.
     Arguments:
-        r0:
-        r1:
-    Returns:
-        r0: Status code.
-    Used by:
-        * SEV
-
-0x33:
-    Description: Copies some encrypted and hmac'd structure to a user space address.
-    Arguments:
-        r0: The user space buffer where to store the structure.
-        r1: The length of the structure (including the hmac).
+        r0: The user space buffer where the encrypted and hmac'd data is stored.
+        r1: The length of the data (including the hmac).
     Returns:
         r0: Status code.
     Used by:
         * SEV
     Remarks:
-        The length of the structure seems to be 0x24b2.
+        The length of the data seems always to be 0x24b2.
+
+0x33:
+    Description: Loads the non-volatile data to user space.
+    Arguments:
+        r0: The user space buffer where to store the (encrypted and hmac'd) data.
+        r1: The length of the data (including the hmac).
+    Returns:
+        r0: Status code.
+    Used by:
+        * SEV
+    Remarks:
+        The length of the data seems always to be 0x24b2.
 
 0x34:
     Description: Executes a platform reset.
