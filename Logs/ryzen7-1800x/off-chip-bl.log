@@ -1,0 +1,912 @@
+
+ *SEC_DBG_MODULE* Entering DebugUnlock module
+
+
+ *SEC_DBG_MODULE* Exiting DebugUnlock module
+
+
+ *SEC_DBG_MODULE* Entering DebugUnlock module
+
+
+ *SEC_DBG_MODULE* Exiting DebugUnlock module
+
+
+Entering security gasket programming application
+
+
+ABL0 - Main ABL Execution
+
+	AGESA MEM - Initial APCB Support
+
+	AGESA MEM - Initial APCB Support
+
+
+Calling ABL 1 BL
+
+
+ABL1 Loaded
+
+
+Slave: ABL, Init Slave states
+
+Cannot find the APCB BoardID Data: APCB_PSP_TYPE_BOARD_ID_GETTING_METHOD
+
+	AGESA MEM - Initial APCB Support
+
+
+SPD Data Sync
+
+
+Debug Sync
+
+
+Debug Sync Disabled - Die count < = 1
+
+
+Returned from ABL 1 BL
+
+
+Calling ABL 6 BL
+
+
+Starting AGESA 6 BL
+
+
+Slave: ABL, Init Slave states
+
+
+Restore
+
+
+Locate
+
+
+Init
+
+
+Mem Phase 1 Start
+
+
+Mem Phase 1 DqMap, AutoConfig, DctConfig
+
+
+Mem Phase 1 DqMap, AutoConfig, DctConfig
+
+
+Mem Phase 1 PlatSpec
+
+
+Mem Phase 1 PlatSpec
+
+
+Sync All Dies Disabled - Die count < = 1
+
+
+Sync All Dies Disabled - Die count < = 1
+
+
+Mem Phase 1 End
+
+
+Debug Sync
+
+
+Debug Sync Disabled - Die count < = 1
+
+
+Returned from ABL 6 BL
+
+
+Calling ABL 2 BL
+
+
+ABL2 Loaded
+
+
+Mem Phase 2 Start
+
+
+Sync All Dies Disabled - Die count < = 1
+
+
+Sync All Dies Disabled - Die count < = 1
+
+
+Mem Phase 2 Mission Mode and Turnaround
+
+
+Mem Phase 2 Mission Mode and Turnaround
+
+
+Mem Phase 2 End
+
+
+Debug Sync
+
+
+Debug Sync Disabled - Die count < = 1
+
+
+Returned from ABL 2 BL
+
+
+Calling ABL 3 BL
+
+
+ABL3 Loaded
+
+
+Sync All Dies Disabled - Die count < = 1
+
+
+Sync All Dies Disabled - Die count < = 1
+
+
+Sync All Dies Disabled - Die count < = 1
+
+
+Sync All Dies Disabled - Die count < = 1
+
+
+Sync All Dies Disabled - Die count < = 1
+
+
+Sync All Dies Disabled - Die count < = 1
+
+
+Sync All Dies Disabled - Die count < = 1
+
+
+Sync All Dies Disabled - Die count < = 1
+
+
+Sync All Dies Disabled - Die count < = 1
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+Sync All Dies Disabled - Die count < = 1
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+Mem Phase 3 Start
+
+
+Mem Phase 3 Complete
+
+
+Mem Phase 3 End
+
+
+Debug Sync
+
+
+Debug Sync Disabled - Die count < = 1
+
+
+Returned from ABL 3 BL
+
+
+Calling ABL 4 BL
+
+
+Starting AGESA 4 BL
+
+
+Slave: ABL, Init Slave states
+
+
+Restore
+
+
+Locate
+
+
+Init
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+A DF table entry
+
+
+Sync All Dies Disabled - Die count < = 1
+
+
+AGESA MEM - Memory test ready
+
+
+ABL Mem Test - Enabled
+
+
+Write Pattern
+
+
+Read Pattern
+
+
+Agesa Mem Test Complete
+
+
+Memory Test Results sync Start 
+
+
+Mem Test Sync Disabled - Die count < = 1
+
+
+Create APOB
+
+
+AGESA MEM - Multi-Die - APOB Support
+
+
+APOB Sync Disabled - Die count < = 1
+
+
+Debug Sync
+
+
+Debug Sync Disabled - Die count < = 1
+
+
+Returned from ABL 4 BL
+
+
+All ABLs Complete (pass control back to PSP BL
+
+
