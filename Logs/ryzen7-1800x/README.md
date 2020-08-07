@@ -22,6 +22,7 @@ The following command line was used to record the log using proxy mode:
 
 The resulting files are contained in this directory, namely:
 * `off-chip-bl.log`: The output of the off chip BL when intercepting the debug log syscall
+* `reg-map.txt`: Register map parsed from the recorded I/O log using `psp-iolog-tool --mode reg-map --iolog-input <file>`
 * `psp-emu.tracelog.bz2`: Compressed tracelog recorded by PSPEmu
 * `proxy-mode.iolog.bz2`: Compressed I/O log for replaying
 
