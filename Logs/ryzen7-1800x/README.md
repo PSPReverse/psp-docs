@@ -30,7 +30,6 @@ The resulting files are contained in this directory, namely:
 
 For replaying the I/O log you need the exact same firmware image version which was used when
 recording the log. You can download the image from ASUS website [here](https://dlcdnets.asus.com/pub/ASUS/mb/SocketAM4/PRIME_X370-PRO/PRIME-X370-PRO-ASUS-3803.zip).
-You'll have to strip the UEFI capsule header from the image file bfore it can be used.
 
 After decompressing the I/O log from this directory PSPEmu can be invoked with the following command line
 for replay:
